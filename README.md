@@ -1,5 +1,5 @@
 # uni-eventos
 Software para Eventos da Uninorte.
 
-Alunos: Odilon, Milena, Valdenilson e Manassés.
+Alunos: Odilon, Mylena, Valdenilson e Manassés.
 
