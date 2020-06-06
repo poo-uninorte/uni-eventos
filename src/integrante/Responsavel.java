@@ -5,6 +5,7 @@ package integrante;
  * @author Valde
  */
 public class Responsavel extends Pessoa {
+    
     public Responsavel(String nome, String telefone, String email) {
         super(nome, telefone, email);
     }

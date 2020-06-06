@@ -38,6 +38,5 @@ public abstract class Pessoa {
     public void modificaEmail(String email) {
         this.email = email;
     }
-    
-    
+      
 }

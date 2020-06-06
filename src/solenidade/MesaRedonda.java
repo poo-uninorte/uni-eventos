@@ -4,6 +4,11 @@ package solenidade;
  *
  * @author Valde
  */
-public class MesaRedonda {
+public class MesaRedonda extends TipoAtividade{
+
+    @Override
+    public void gerarListaDePessoas() {
+        
+    }
     
 }

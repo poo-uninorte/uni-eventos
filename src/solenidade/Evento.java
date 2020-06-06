@@ -14,6 +14,14 @@ public class Evento {
     private Date periodo;
     private EquipeOrganizadora equipe;
 
+    public Evento(String sigla, String titulo, String nome, Date periodo, EquipeOrganizadora equipe) {
+        this.sigla = sigla;
+        this.titulo = titulo;
+        this.nome = nome;
+        this.periodo = periodo;
+        this.equipe = equipe;
+    }
+    
     public String informaNome() {
         return nome;
     }
