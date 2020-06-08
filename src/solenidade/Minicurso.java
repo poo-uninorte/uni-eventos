@@ -9,6 +9,10 @@ import java.util.List;
 public class Minicurso extends TipoAtividade{
     private List Interessado;
 
+    public Minicurso(String nome, String tempo) {
+        super(nome, tempo);
+    }
+
     public List informaInteressado() {
         return Interessado;
     }
