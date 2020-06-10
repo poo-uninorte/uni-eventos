@@ -1,5 +1,6 @@
 package solenidade;
 
+import integrante.Participante;
 import integrante.Responsavel;
 import java.util.ArrayList;
 
@@ -10,15 +11,23 @@ import java.util.ArrayList;
 public abstract class TipoAtividade implements Atividade{
     private String nome;
     private String tempo;
-    private ArrayList<Responsavel> listaDeResponsavel;
+    private ArrayList<Responsavel> listaDeResponsaveis;
+    private ArrayList<Participante> listaDeParticipantes;
 
     public TipoAtividade(String nome, String tempo) {
         this.nome = nome;
         this.tempo = tempo;
-        listaDeResponsavel = new ArrayList();
+        listaDeResponsaveis = new ArrayList();
+        listaDeParticipantes = new ArrayList();
     }
     
     public void AdicionarResponsavel(Responsavel R){
-        listaDeResponsavel.add(R);
+        listaDeResponsaveis.add(R);
     }
+    
+    public void AdicionarParticipante(Participante P){
+        listaDeParticipantes.add(P);
+    }
+    
+    
 }

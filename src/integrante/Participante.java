@@ -6,7 +6,9 @@ package integrante;
  */
 public class Participante extends Pessoa{
     private boolean status = false;
-
+    
+    
+    
     public Participante(String nome, String telefone, String email) {
         super(nome, telefone, email);
     }

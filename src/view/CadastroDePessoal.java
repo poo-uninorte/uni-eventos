@@ -6,6 +6,7 @@
 package view;
 
 import integrante.Participante;
+import integrante.Responsavel;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,16 +33,16 @@ public class CadastroDePessoal extends javax.swing.JFrame {
 
         jpPrincipal = new javax.swing.JTabbedPane();
         jpEquipeOrganizadora = new javax.swing.JPanel();
-        jpResponsavel = new javax.swing.JPanel();
         jpParticipante = new javax.swing.JPanel();
-        lblNomeParticipante = new javax.swing.JLabel();
-        lblEmailParticipante = new javax.swing.JLabel();
-        lblTelefoneParticipante = new javax.swing.JLabel();
-        txtNomeParticipante = new javax.swing.JTextField();
-        txtTelefoneParticipante = new javax.swing.JTextField();
-        txtEmailParticipante = new javax.swing.JTextField();
-        btLimparParticipante = new javax.swing.JButton();
-        btSalvarParticipante = new javax.swing.JButton();
+        lblNomeParticipanteOuResponsavel = new javax.swing.JLabel();
+        lblEmailParticipanteOuResponsavel = new javax.swing.JLabel();
+        lblTelefoneParticipanteOuResponsavel = new javax.swing.JLabel();
+        txtNomeParticipanteOuResponsavel = new javax.swing.JTextField();
+        txtTelefoneParticipanteOuResponsavel = new javax.swing.JTextField();
+        txtEmailParticipanteOuResponsavel = new javax.swing.JTextField();
+        btSalvarParticipanteOuResponsavel = new javax.swing.JButton();
+        jcResponsavelOuParticipante = new javax.swing.JComboBox();
+        jcResponsavelOuParticipanteAtividade = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -52,7 +53,7 @@ public class CadastroDePessoal extends javax.swing.JFrame {
         jpEquipeOrganizadora.setLayout(jpEquipeOrganizadoraLayout);
         jpEquipeOrganizadoraLayout.setHorizontalGroup(
             jpEquipeOrganizadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
+            .addGap(0, 508, Short.MAX_VALUE)
         );
         jpEquipeOrganizadoraLayout.setVerticalGroup(
             jpEquipeOrganizadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -61,53 +62,48 @@ public class CadastroDePessoal extends javax.swing.JFrame {
 
         jpPrincipal.addTab("Equipe Org.", jpEquipeOrganizadora);
 
-        javax.swing.GroupLayout jpResponsavelLayout = new javax.swing.GroupLayout(jpResponsavel);
-        jpResponsavel.setLayout(jpResponsavelLayout);
-        jpResponsavelLayout.setHorizontalGroup(
-            jpResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
-        );
-        jpResponsavelLayout.setVerticalGroup(
-            jpResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
-        );
+        lblNomeParticipanteOuResponsavel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNomeParticipanteOuResponsavel.setText("Nome");
 
-        jpPrincipal.addTab("Responsável", jpResponsavel);
+        lblEmailParticipanteOuResponsavel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblEmailParticipanteOuResponsavel.setText("Email");
 
-        lblNomeParticipante.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblNomeParticipante.setText("Nome");
+        lblTelefoneParticipanteOuResponsavel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTelefoneParticipanteOuResponsavel.setText("Telefone");
 
-        lblEmailParticipante.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblEmailParticipante.setText("Email");
-
-        lblTelefoneParticipante.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblTelefoneParticipante.setText("Telefone");
-
-        txtNomeParticipante.addActionListener(new java.awt.event.ActionListener() {
+        txtNomeParticipanteOuResponsavel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeParticipanteActionPerformed(evt);
+                txtNomeParticipanteOuResponsavelActionPerformed(evt);
             }
         });
 
-        txtEmailParticipante.addActionListener(new java.awt.event.ActionListener() {
+        txtEmailParticipanteOuResponsavel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmailParticipanteActionPerformed(evt);
+                txtEmailParticipanteOuResponsavelActionPerformed(evt);
             }
         });
 
-        btLimparParticipante.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btLimparParticipante.setText("Limpar");
-        btLimparParticipante.addActionListener(new java.awt.event.ActionListener() {
+        btSalvarParticipanteOuResponsavel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btSalvarParticipanteOuResponsavel.setText("Salvar");
+        btSalvarParticipanteOuResponsavel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btLimparParticipanteActionPerformed(evt);
+                btSalvarParticipanteOuResponsavelActionPerformed(evt);
             }
         });
 
-        btSalvarParticipante.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btSalvarParticipante.setText("Salvar");
-        btSalvarParticipante.addActionListener(new java.awt.event.ActionListener() {
+        jcResponsavelOuParticipante.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jcResponsavelOuParticipante.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Participante", "Responsável" }));
+        jcResponsavelOuParticipante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSalvarParticipanteActionPerformed(evt);
+                jcResponsavelOuParticipanteActionPerformed(evt);
+            }
+        });
+
+        jcResponsavelOuParticipanteAtividade.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jcResponsavelOuParticipanteAtividade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Minicurso", "Mesa Redonda", "Feira", "Palestra" }));
+        jcResponsavelOuParticipanteAtividade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcResponsavelOuParticipanteAtividadeActionPerformed(evt);
             }
         });
 
@@ -117,46 +113,53 @@ public class CadastroDePessoal extends javax.swing.JFrame {
             jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpParticipanteLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblTelefoneParticipante)
-                    .addGroup(jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblEmailParticipante)
-                        .addComponent(lblNomeParticipante)))
-                .addGap(28, 28, 28)
                 .addGroup(jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtNomeParticipante, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
-                        .addComponent(txtEmailParticipante)
-                        .addComponent(txtTelefoneParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpParticipanteLayout.createSequentialGroup()
-                        .addComponent(btLimparParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(69, 69, 69)
-                        .addComponent(btSalvarParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                        .addGap(8, 8, 8)
+                        .addComponent(jcResponsavelOuParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(jcResponsavelOuParticipanteAtividade, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(btSalvarParticipanteOuResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpParticipanteLayout.createSequentialGroup()
+                        .addGroup(jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblTelefoneParticipanteOuResponsavel)
+                            .addGroup(jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblEmailParticipanteOuResponsavel)
+                                .addComponent(lblNomeParticipanteOuResponsavel)))
+                        .addGap(28, 28, 28)
+                        .addGroup(jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNomeParticipanteOuResponsavel, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
+                            .addComponent(txtEmailParticipanteOuResponsavel)
+                            .addComponent(txtTelefoneParticipanteOuResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jpParticipanteLayout.setVerticalGroup(
             jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpParticipanteLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNomeParticipante)
-                    .addComponent(txtNomeParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblNomeParticipanteOuResponsavel)
+                    .addComponent(txtNomeParticipanteOuResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEmailParticipante)
-                    .addComponent(txtEmailParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblEmailParticipanteOuResponsavel)
+                    .addComponent(txtEmailParticipanteOuResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTelefoneParticipante)
-                    .addComponent(txtTelefoneParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
+                    .addComponent(lblTelefoneParticipanteOuResponsavel)
+                    .addComponent(txtTelefoneParticipanteOuResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66)
                 .addGroup(jpParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btLimparParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btSalvarParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(109, Short.MAX_VALUE))
+                    .addComponent(jcResponsavelOuParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcResponsavelOuParticipanteAtividade, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btSalvarParticipanteOuResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
-        jpPrincipal.addTab("Participante", jpParticipante);
+        jcResponsavelOuParticipante.getAccessibleContext().setAccessibleDescription("");
+
+        jpPrincipal.addTab("Participante ou Responsável", jpParticipante);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,38 +180,51 @@ public class CadastroDePessoal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNomeParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeParticipanteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeParticipanteActionPerformed
+    private void btSalvarParticipanteOuResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarParticipanteOuResponsavelActionPerformed
 
-    private void txtEmailParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailParticipanteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailParticipanteActionPerformed
-
-    private void btSalvarParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarParticipanteActionPerformed
-        
-        if(txtNomeParticipante.getText().isEmpty() || txtEmailParticipante.getText().isEmpty() || txtTelefoneParticipante.getText().isEmpty()){
+        if(txtNomeParticipanteOuResponsavel.getText().isEmpty() || txtEmailParticipanteOuResponsavel.getText().isEmpty() || txtTelefoneParticipanteOuResponsavel.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos!!");
-            LimpaCamposInterfaceParticipante();
-            
-        } else {
-            Participante participante = new Participante(txtNomeParticipante.getText(), txtTelefoneParticipante.getText(), txtEmailParticipante.getText());
+            LimpaOsCamposDaInterfaceParticipanteOuResponsavel();
+
+        } else if (jcResponsavelOuParticipante.getSelectedItem().equals("Participante")){
+            Participante participante = new Participante(txtNomeParticipanteOuResponsavel.getText(), txtTelefoneParticipanteOuResponsavel.getText(), txtEmailParticipanteOuResponsavel.getText());
+         
             JOptionPane.showMessageDialog(null, participante.informaNome() + " cadastrado(a) com sucesso!");
-            LimpaCamposInterfaceParticipante();
+            LimpaOsCamposDaInterfaceParticipanteOuResponsavel();
+        } else {
+            Responsavel responsavel = new Responsavel(txtNomeParticipanteOuResponsavel.getText(), txtTelefoneParticipanteOuResponsavel.getText(), txtEmailParticipanteOuResponsavel.getText());
+            JOptionPane.showMessageDialog(null, responsavel.informaNome() + " cadastrado(a) com sucesso!");
+            LimpaOsCamposDaInterfaceParticipanteOuResponsavel();
         }
-             
-    }//GEN-LAST:event_btSalvarParticipanteActionPerformed
+
+    }//GEN-LAST:event_btSalvarParticipanteOuResponsavelActionPerformed
+
+   // private void relacionaParticipanteAAtividade(TipoAtividade TA, Participante P){
+    //   TA.AdicionarParticipante(P);
+    //}
     
-    private void LimpaCamposInterfaceParticipante(){
-        txtNomeParticipante.setText("");
-        txtTelefoneParticipante.setText("");
-        txtEmailParticipante.setText("");
+    private void txtEmailParticipanteOuResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailParticipanteOuResponsavelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailParticipanteOuResponsavelActionPerformed
+
+    private void txtNomeParticipanteOuResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeParticipanteOuResponsavelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeParticipanteOuResponsavelActionPerformed
+
+    private void jcResponsavelOuParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcResponsavelOuParticipanteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcResponsavelOuParticipanteActionPerformed
+
+    private void jcResponsavelOuParticipanteAtividadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcResponsavelOuParticipanteAtividadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcResponsavelOuParticipanteAtividadeActionPerformed
+    
+    private void LimpaOsCamposDaInterfaceParticipanteOuResponsavel(){
+        txtNomeParticipanteOuResponsavel.setText("");
+        txtTelefoneParticipanteOuResponsavel.setText("");
+        txtEmailParticipanteOuResponsavel.setText("");
     }
-    private void btLimparParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparParticipanteActionPerformed
-        txtNomeParticipante.setText("");
-        txtTelefoneParticipante.setText("");
-        txtEmailParticipante.setText("");
-    }//GEN-LAST:event_btLimparParticipanteActionPerformed
+    
 
     /**
      * @param args the command line arguments
@@ -247,17 +263,17 @@ public class CadastroDePessoal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btLimparParticipante;
-    private javax.swing.JButton btSalvarParticipante;
+    private javax.swing.JButton btSalvarParticipanteOuResponsavel;
+    private javax.swing.JComboBox jcResponsavelOuParticipante;
+    private javax.swing.JComboBox jcResponsavelOuParticipanteAtividade;
     private javax.swing.JPanel jpEquipeOrganizadora;
     private javax.swing.JPanel jpParticipante;
     private javax.swing.JTabbedPane jpPrincipal;
-    private javax.swing.JPanel jpResponsavel;
-    private javax.swing.JLabel lblEmailParticipante;
-    private javax.swing.JLabel lblNomeParticipante;
-    private javax.swing.JLabel lblTelefoneParticipante;
-    private javax.swing.JTextField txtEmailParticipante;
-    private javax.swing.JTextField txtNomeParticipante;
-    private javax.swing.JTextField txtTelefoneParticipante;
+    private javax.swing.JLabel lblEmailParticipanteOuResponsavel;
+    private javax.swing.JLabel lblNomeParticipanteOuResponsavel;
+    private javax.swing.JLabel lblTelefoneParticipanteOuResponsavel;
+    private javax.swing.JTextField txtEmailParticipanteOuResponsavel;
+    private javax.swing.JTextField txtNomeParticipanteOuResponsavel;
+    private javax.swing.JTextField txtTelefoneParticipanteOuResponsavel;
     // End of variables declaration//GEN-END:variables
 }
