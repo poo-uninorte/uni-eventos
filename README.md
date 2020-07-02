@@ -27,6 +27,8 @@
        
     Agora execute o AppMainConsole descomentando a linha do método inicializaBancoDeDados().
     
+    Após isso, é só explorar a aplicação...
+    
 <br>
 <br>
 
